@@ -9,7 +9,7 @@
 # CUSTOM: Keep project-specific narrative in docs/, not in this configuration file.
 
 [project]
-site_name = "Docs" # CUSTOM: Tab name of the documentation site.
+site_name = "Hannah Sacco - Algebra I Test Data Analysis" # CUSTOM: Tab name of the documentation site.
 site_url = "https://hasacco.github.io/datafun-06-applied/"
 repo_url = "https://github.com/hasacco/datafun-06-applied"
 repo_name = "hasacco/datafun-06-applied"

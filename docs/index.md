@@ -22,3 +22,21 @@ to get these projects running on your machine.
 The API page is not always easy to read at first,
 but it becomes useful as you get more comfortable with project structure,
 modules, functions, and docstrings.
+
+## Custom Project
+
+### Basis
+
+The basis of this project was the example EDA workflow provided by Dr. Case. It initially used a CO2 dataset, and has been left in this repository as an example to run.
+
+### Phase 4 Modifications
+
+For the initial modification, I used Dr. Case's CO2 dataset, excluded the "World" rows of data in order to focus on the provided countries, and created a grid of boxplots in order to find patterns between variables. I chose to exclude "World" not only to focus on the provided countries, but also to create better scales on the y-axis of the boxplots in order to aid in analysis. I verified that this modification worked by running the project, seeing that it was executed successfully, and analyzing the boxplots.
+
+### Phase 5 Custom Project
+
+In my custom project, I analyzed current End of Course standarized test scores for Algebra I from a local district, with all identifying student data removed.
+
+The example only used one categorical variable to group data by, but I chose to use 5 categorical variables. I was trying to analyze the correlations between these categorical variables and student performance. I learned that some categorical variables seem to be more strongly correlated to performance than others, and that it is difficult to identify which one of the variables is most responsible for performance. This would require further analysis and adjusting for certain conditions. Some of the categorical variables, such as Ethnicity, did not lend themselves to analysis well, as there were not enough students in each category to make findings valid. I learned that all findings - even those that tell me that a certain sample might not be valid due to size - are useful in initial analysis and designing further steps or studies.
+
+In this project, I used the EDA workflow learned during this course, as well as skills with pandas (which I previously had not been exposed to). I also have really worked on my documentation and presentation during this project as well. The visuals I used were a combination of techniques learned from class examples and Google searches to learn new ways to display data. The most useful portion of this project was seeing how reusable code makes new applications so much simpler. In the future, I hope to apply these skills and techniques to a variety of data sets, as the process is useful no matter the subject of the data. Specifically, I hope to continue to apply them to my classroom data to improve instruction and to our local EMS service data to improve treatment and survival.

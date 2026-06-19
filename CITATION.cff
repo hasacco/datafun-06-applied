@@ -16,10 +16,6 @@ version: "0.1.0"
 date-released: "2026-06-07"
 
 authors:
-  - family-names: Case
-    given-names: Denise M.
-    orcid: "https://orcid.org/0000-0001-6165-7389"
-    affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
   - family-names: Sacco
     given-names: Hannah M.
     affiliation: "Northwest Missouri State University, USA"

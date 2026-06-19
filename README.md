@@ -8,73 +8,20 @@
 
 ## Project Goal
 
-In this project, you perform a novel **Exploratory Data Analysis (EDA)**
-using Jupyter notebooks or Python modules (your preference).
-The addition of related data and/or SQL may be included and is optional.
-
-Your goal: choose a new dataset, and explore it:
-run checks, view distributions, identify missing values or outliers.
-Create and present a custom project to explore a different tabular dataset.
-
-For data suggestions, please see [data/raw/README.md](data/raw/README.md).
-
-## Examples
-
-The project includes an additional EDA on a real-world dataset.
-Between this and the Module 4 example,
-you should be able to see what parts are similar
-(the general outline and workflow) and what changes with data.
-The two projects together help create an appreciation
-for the value of **reusable functions**.
+This project was performed to analyze Algebra I End of Course scores.
+The data set was obtained locally, with all sensitive student data (anything that could identify a student) removed.
+The goal of this project was to read the data into a table from a .csv file, clean the data, and then perform basic analysis on the data to look for patterns and implications.
 
 ## Working Files
 
 You'll work with these areas:
 
-- **data/raw** - raw data for exploration
+- **data/raw** - raw data for exploration - uses student_test_data.csv
 - **docs/** - project narrative and documentation
-- **src/** - supporting Python package modules
+- **src/** - supporting Python package modules - uses app_test_data_hasacco.py
 - **notebooks/** - interactive analysis
 - **pyproject.toml** - update authorship & links
 - **zensical.toml** - update authorship & links
-
-## Instructions (pro-analytics-02)
-
-Follow the
-[step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-to complete:
-
-1. Phase 1. **Start & Run**
-2. Phase 2. **Change Authorship**
-3. Phase 3. **Read & Understand**
-4. Phase 4. **Modify**
-5. Phase 5. **Apply**
-
-## Challenges
-
-Challenges are expected.
-Sometimes instructions may not quite match your operating system.
-When issues occur, share screenshots, error messages, and details about what you tried.
-Working through issues is part of implementing professional projects.
-
-## Success
-
-After completing Phase 1. **Start & Run**, you'll have your own GitHub project,
-with the example notebook executed and committed,
-and running the example script will print out:
-
-```shell
-========================
-Executed successfully!
-========================
-```
-
-A new file `project.log` will appear in the root project folder.
-
-## Command Reference
-
-<details>
-<summary>Show command reference</summary>
 
 ### In a machine terminal (open in your `Repos` folder)
 
@@ -108,8 +55,8 @@ uvx pre-commit run --all-files
 # repeat if changes were made
 uvx pre-commit run --all-files
 
-# run the example module and verify the environment (.venv/)
-uv run python -m datafun.app_case
+# run the module and verify the environment (.venv/)
+uv run python -m datafun.app_test_data_hasacco
 
 # do chores
 uv run python -m pyright
@@ -124,78 +71,447 @@ git push -u origin main
 
 </details>
 
-## Notes
-
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
-- You do not need to add to or modify `tests/`. They are provided for example only.
-- Many files are silent helpers. Explore as you like, but nothing is required.
-- You do NOT not to understand everything; understanding builds naturally over time.
-
-## Troubleshooting >>>
-
-If you see something like this in your terminal: `>>>` or `...`
-You accidentally started Python interactive mode.
-It happens.
-Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
-
-## Example Output (Can Remove this Section after You Verify)
+## Example Output
 
 ```shell
- | INFO | P06 | --- Section 9: Summary and next steps ---
- | INFO | P06 | ========================
- | INFO | P06 | SUMMARY
- | INFO | P06 | ========================
- | INFO | P06 | Dataset: owid-co2-data-subset
- | INFO | P06 | Original rows: 350
- | INFO | P06 | Clean rows:    308
- | INFO | P06 | Groups found in country: ['Brazil', 'Canada', 'China', 'France', 'Germany', 'India', 'Japan', 'United Kingdom', 'United States', 'World']
- | INFO | P06 | ======================
- | INFO | P06 | Review the results.
- | INFO | P06 | Determine the strongest correlations.
- | INFO | P06 | ======================
- | INFO | P06 | Look for interesting patterns in the charts.
- | INFO | P06 | Repeat the process, exploring additional angles.
- | INFO | P06 | After finding interesting insights, conclude your analysis.
- | INFO | P06 | ======================
- | INFO | P06 | Include instructions and specifics in your README.md file.
- | INFO | P06 | Write up your narrative on your docs/index.md file.
- | INFO | P06 | Include your next step suggestions for further analysis or modeling.
- | INFO | P06 | ======================
- | INFO | P06 | ----- in a script, call plt.show() once at the end to display all charts -----
- | INFO | P06 | ----- in a script, close the chart windows (with the close button) to continue  -----
- | INFO | P06 | EDA workflow complete
- | INFO | P06 | IMPORTANT: This script creates chart windows.
- | INFO | P06 | Close any chart windows and terminate this process with CTRL+c as needed.
- | INFO | P06 | ========================
- | INFO | P06 | Executed successfully!
- | INFO | P06 | ========================
+2026-06-19 17:28:15 | INFO | P06 | === RUN START ===
+2026-06-19 17:28:15 | INFO | P06 | project=P06
+2026-06-19 17:28:15 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 17:28:15 | INFO | P06 | python=3.14.5
+2026-06-19 17:28:15 | INFO | P06 | os=Windows 11
+2026-06-19 17:28:15 | INFO | P06 | shell=powershell
+2026-06-19 17:28:15 | INFO | P06 | cwd=.
+2026-06-19 17:28:15 | INFO | P06 | github_actions=False
+2026-06-19 17:28:15 | INFO | P06 | === RUN START ===
+2026-06-19 17:28:15 | INFO | P06 | project=P06
+2026-06-19 17:28:15 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 17:28:15 | INFO | P06 | python=3.14.5
+2026-06-19 17:28:15 | INFO | P06 | os=Windows 11
+2026-06-19 17:28:15 | INFO | P06 | shell=powershell
+2026-06-19 17:28:15 | INFO | P06 | cwd=.
+2026-06-19 17:28:15 | INFO | P06 | github_actions=False
+2026-06-19 17:28:15 | INFO | P06 | === RUN START ===
+2026-06-19 17:28:15 | INFO | P06 | project=EDA
+2026-06-19 17:28:15 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 17:28:15 | INFO | P06 | python=3.14.5
+2026-06-19 17:28:15 | INFO | P06 | os=Windows 11
+2026-06-19 17:28:15 | INFO | P06 | shell=powershell
+2026-06-19 17:28:15 | INFO | P06 | cwd=.
+2026-06-19 17:28:15 | INFO | P06 | github_actions=False
+2026-06-19 17:28:15 | INFO | P06 | ========================
+2026-06-19 17:28:15 | INFO | P06 | START main()
+2026-06-19 17:28:15 | INFO | P06 | ========================
+2026-06-19 17:28:15 | INFO | P06 | --- Section 2: Load dataset: student_test_data ---
+2026-06-19 17:28:15 | INFO | P06 | Loading dataset: student_test_data
+2026-06-19 17:28:15 | INFO | P06 | Loaded: 30 rows, 19 columns
+2026-06-19 17:28:15 | INFO | P06 | --- Section 3: Inspect shape and basic structure ---
+2026-06-19 17:28:15 | INFO | P06 | Previewing first few rows of the dataset
+2026-06-19 17:28:15 | DEBUG | P06 |
+   Enrolled_grade  Scale_score  Performance_level Sex Ethnicity  Eco_dis  Migrant Emergent_bilingual  \
+0             8.0       4256.0                3.0   M         H      0.0      0.0                  S  
+1             8.0       4293.0                3.0   F         H      0.0      0.0                  0  
+2             8.0       4183.0                3.0   M         H      0.0      0.0                  0  
+3             8.0       4293.0                3.0   F         H      0.0      0.0                  0  
+4             8.0       5030.0                4.0   M         H      1.0      0.0                  S  
+
+   English_second_language  Special_education  Gifted_talented  At_risk  R_c_1  R_c_2  R_c_3  R_c_4  R_c_5  \
+0                      0.0                0.0              0.0      0.0    6.0   11.0   11.0    5.0    5.0  
+1                      0.0                0.0              0.0      0.0    6.0   11.0   10.0    8.0    4.0  
+2                      0.0                0.0              1.0      0.0    6.0   10.0    8.0    7.0    5.0  
+3                      0.0                0.0              0.0      0.0    3.0   10.0   12.0    9.0    5.0  
+4                      0.0                0.0              0.0      0.0    9.0   12.0   14.0   11.0    7.0  
+
+   Total_raw_score  Percent_score  
+0             38.0          64.41  
+1             39.0          66.10  
+2             36.0          61.02  
+3             39.0          66.10  
+4             53.0          89.83  
+2026-06-19 17:28:15 | INFO | P06 | Column names
+2026-06-19 17:28:15 | DEBUG | P06 | ['Enrolled_grade', 'Scale_score', 'Performance_level', 'Sex', 'Ethnicity', 'Eco_dis', 'Migrant', 'Emergent_bilingual', 'English_second_language', 'Special_education', 'Gifted_talented', 'At_risk', 'R_c_1', 'R_c_2', 'R_c_3', 'R_c_4', 'R_c_5', 'Total_raw_score', 'Percent_score']
+2026-06-19 17:28:15 | INFO | P06 | DataFrame info (types and non-null counts)
+<class 'pandas.DataFrame'>
+RangeIndex: 30 entries, 0 to 29
+Data columns (total 19 columns):
+ #   Column                   Non-Null Count  Dtype  
+---  ------                   --------------  -----  
+ 0   Enrolled_grade           30 non-null     float64
+ 1   Scale_score              30 non-null     float64
+ 2   Performance_level        30 non-null     float64
+ 3   Sex                      30 non-null     str  
+ 4   Ethnicity                30 non-null     str  
+ 5   Eco_dis                  30 non-null     float64
+ 6   Migrant                  30 non-null     float64
+ 7   Emergent_bilingual       30 non-null     str  
+ 8   English_second_language  30 non-null     float64
+ 9   Special_education        30 non-null     float64
+ 10  Gifted_talented          30 non-null     float64
+ 11  At_risk                  30 non-null     float64
+ 12  R_c_1                    30 non-null     float64
+ 13  R_c_2                    30 non-null     float64
+ 14  R_c_3                    30 non-null     float64
+ 15  R_c_4                    30 non-null     float64
+ 16  R_c_5                    30 non-null     float64
+ 17  Total_raw_score          30 non-null     float64
+ 18  Percent_score            30 non-null     float64
+dtypes: float64(16), str(3)
+memory usage: 4.6 KB
+2026-06-19 17:28:15 | INFO | P06 | Dataset shape: 30 rows, 19 columns
+2026-06-19 17:28:15 | INFO | P06 | --- Section 4: Create Data Dictionary and Check Data Quality ---
+2026-06-19 17:28:15 | INFO | P06 | Building starter data dictionary
+2026-06-19 17:28:15 | DEBUG | P06 |
+                     column    dtype  missing_count  missing_pct
+0            Enrolled_grade  float64              0          0.0
+1               Scale_score  float64              0          0.0
+2         Performance_level  float64              0          0.0
+3                       Sex      str              0          0.0
+4                 Ethnicity      str              0          0.0
+5                   Eco_dis  float64              0          0.0
+6                   Migrant  float64              0          0.0
+7        Emergent_bilingual      str              0          0.0
+8   English_second_language  float64              0          0.0
+9         Special_education  float64              0          0.0
+10          Gifted_talented  float64              0          0.0
+11                  At_risk  float64              0          0.0
+12                    R_c_1  float64              0          0.0
+13                    R_c_2  float64              0          0.0
+14                    R_c_3  float64              0          0.0
+15                    R_c_4  float64              0          0.0
+16                    R_c_5  float64              0          0.0
+17          Total_raw_score  float64              0          0.0
+18            Percent_score  float64              0          0.0
+2026-06-19 17:28:15 | INFO | P06 | Missing values per column:
+2026-06-19 17:28:15 | INFO | P06 |
+Enrolled_grade             0
+Scale_score                0
+Performance_level          0
+Sex                        0
+Ethnicity                  0
+Eco_dis                    0
+Migrant                    0
+Emergent_bilingual         0
+English_second_language    0
+Special_education          0
+Gifted_talented            0
+At_risk                    0
+R_c_1                      0
+R_c_2                      0
+R_c_3                      0
+R_c_4                      0
+R_c_5                      0
+Total_raw_score            0
+Percent_score              0
+dtype: int64
+2026-06-19 17:28:15 | INFO | P06 | Checking missing values per column
+2026-06-19 17:28:15 | DEBUG | P06 |
+Enrolled_grade             0
+Scale_score                0
+Performance_level          0
+Sex                        0
+Ethnicity                  0
+Eco_dis                    0
+Migrant                    0
+Emergent_bilingual         0
+English_second_language    0
+Special_education          0
+Gifted_talented            0
+At_risk                    0
+R_c_1                      0
+R_c_2                      0
+R_c_3                      0
+R_c_4                      0
+R_c_5                      0
+Total_raw_score            0
+Percent_score              0
+dtype: int64
+2026-06-19 17:28:15 | INFO | P06 | Duplicate rows detected: 0
+2026-06-19 17:28:15 | INFO | P06 | Call describe() for numeric columns
+2026-06-19 17:28:15 | DEBUG | P06 |
+       Scale_score      R_c_1      R_c_2      R_c_3      R_c_4      R_c_5  Total_raw_score  Percent_score
+count    30.000000  30.000000  30.000000  30.000000  30.000000  30.000000         30.00000      30.000000
+mean   4134.533333   5.400000   8.333333   9.166667   6.533333   4.666667         34.10000      57.797333
+std     448.264987   2.094327   2.974992   3.484778   2.738403   2.170862         11.56794      19.606948
+min    3358.000000   1.000000   2.000000   3.000000   0.000000   0.000000         14.00000      23.730000
+25%    3747.000000   4.000000   6.000000   7.000000   5.000000   3.000000         23.50000      39.827500
+50%    4256.000000   6.000000   9.000000  10.000000   7.000000   5.000000         38.00000      64.410000
+75%    4457.500000   7.000000  11.000000  11.000000   9.000000   6.000000         43.25000      73.307500
+max    5030.000000   9.000000  13.000000  15.000000  11.000000   7.000000         53.00000      89.830000
+
+2026-06-19 17:28:15 | INFO | P06 | --- Section 5: Create a cleaned view for EDA ---
+2026-06-19 17:28:15 | INFO | P06 | Creating cleaned view for EDA (dropping rows with key missing values)
+2026-06-19 17:28:15 | DEBUG | P06 | Columns required to be non-missing: ['Scale_score', 'R_c_1', 'R_c_2', 'R_c_3', 'R_c_4', 'R_c_5', 'Total_raw_score', 'Percent_score', 'Sex', 'Ethnicity', 'Enrolled_grade', 'Special_education', 'Emergent_bilingual']
+2026-06-19 17:28:15 | INFO | P06 | Original rows: 30
+2026-06-19 17:28:15 | INFO | P06 | Clean rows:    30
+2026-06-19 17:28:15 | INFO | P06 | Rows dropped:  0
+2026-06-19 17:28:15 | INFO | P06 | --- Section 6: Descriptive statistics for numeric columns ---
+2026-06-19 17:28:15 | INFO | P06 | --------------- Manual statistics ---------------
+2026-06-19 17:28:15 | DEBUG | P06 | Percent_score Statistics (using numpy):
+2026-06-19 17:28:15 | DEBUG | P06 |   Mean: 57.80
+2026-06-19 17:28:15 | DEBUG | P06 |   Std Dev: 19.28
+2026-06-19 17:28:15 | DEBUG | P06 |   Min: 23.73
+2026-06-19 17:28:15 | DEBUG | P06 |   Max: 89.83
+2026-06-19 17:28:15 | DEBUG | P06 |   Range: 66.10
+2026-06-19 17:28:15 | INFO | P06 | --------------- Using pandas describe() method ---------------
+2026-06-19 17:28:15 | INFO | P06 | Computing overall descriptive statistics
+2026-06-19 17:28:15 | DEBUG | P06 |
+                 count         mean         std      min        25%      50%        75%      max
+Scale_score       30.0  4134.533333  448.264987  3358.00  3747.0000  4256.00  4457.5000  5030.00
+R_c_1             30.0     5.400000    2.094327     1.00     4.0000     6.00     7.0000     9.00
+R_c_2             30.0     8.333333    2.974992     2.00     6.0000     9.00    11.0000    13.00
+R_c_3             30.0     9.166667    3.484778     3.00     7.0000    10.00    11.0000    15.00
+R_c_4             30.0     6.533333    2.738403     0.00     5.0000     7.00     9.0000    11.00
+R_c_5             30.0     4.666667    2.170862     0.00     3.0000     5.00     6.0000     7.00
+Total_raw_score   30.0    34.100000   11.567940    14.00    23.5000    38.00    43.2500    53.00
+Percent_score     30.0    57.797333   19.606948    23.73    39.8275    64.41    73.3075    89.83
+2026-06-19 17:28:15 | INFO | P06 | --------------- Using pandas groupby() and agg() ---------------
+2026-06-19 17:28:15 | INFO | P06 | Computing descriptive statistics by group
+2026-06-19 17:28:15 | INFO | P06 |
+Stacked view - easier to read in logs:
+2026-06-19 17:28:15 | DEBUG | P06 |
+                     count         mean         std      min      max
+Sex  
+F   Scale_score         13  4040.538462  338.246610  3358.00  4495.00
+    R_c_1               13     4.769231    1.739437     1.00     7.00
+    R_c_2               13     7.846154    2.733927     4.00    11.00
+    R_c_3               13     8.307692    3.275785     3.00    12.00
+    R_c_4               13     6.538462    2.025479     3.00     9.00
+    R_c_5               13     4.461538    1.761410     1.00     7.00
+    Total_raw_score     13    31.923077    9.241767    14.00    44.00
+    Percent_score       13    54.107692   15.664011    23.73    74.58
+M   Scale_score         17  4206.411765  515.490550  3358.00  5030.00
+    R_c_1               17     5.882353    2.260596     1.00     9.00
+    R_c_2               17     8.705882    3.177356     2.00    13.00
+    R_c_3               17     9.823529    3.592271     3.00    15.00
+    R_c_4               17     6.529412    3.242639     0.00    11.00
+    R_c_5               17     4.823529    2.480809     0.00     7.00
+    Total_raw_score     17    35.764706   13.103098    14.00    53.00
+    Percent_score       17    60.618824   22.209086    23.73    89.83
+2026-06-19 17:28:15 | DEBUG | P06 |
+                           count         mean         std      min      max
+Ethnicity  
+H         Scale_score         29  4161.310345  431.091066  3358.00  5030.00
+          R_c_1               29     5.448276    2.114342     1.00     9.00
+          R_c_2               29     8.551724    2.772134     4.00    13.00
+          R_c_3               29     9.206897    3.539363     3.00    15.00
+          R_c_4               29     6.758621    2.487902     1.00    11.00
+          R_c_5               29     4.827586    2.018998     0.00     7.00
+          Total_raw_score     29    34.793103   11.120699    14.00    53.00
+          Percent_score       29    58.972069   18.848964    23.73    89.83
+W         Scale_score          1  3358.000000         NaN  3358.00  3358.00
+          R_c_1                1     4.000000         NaN     4.00     4.00
+          R_c_2                1     2.000000         NaN     2.00     2.00
+          R_c_3                1     8.000000         NaN     8.00     8.00
+          R_c_4                1     0.000000         NaN     0.00     0.00
+          R_c_5                1     0.000000         NaN     0.00     0.00
+          Total_raw_score      1    14.000000         NaN    14.00    14.00
+          Percent_score        1    23.730000         NaN    23.73    23.73
+2026-06-19 17:28:15 | DEBUG | P06 |
+                                count         mean         std      min      max
+Enrolled_grade  
+8.0            Scale_score         11  4499.545455  254.146558  4183.00  5030.00
+               R_c_1               11     6.909091    1.758098     3.00     9.00
+               R_c_2               11    10.545455    1.863525     6.00    13.00
+               R_c_3               11    11.636364    2.062655     8.00    15.00
+               R_c_4               11     8.545455    1.634848     5.00    11.00
+               R_c_5               11     5.909091    1.136182     4.00     7.00
+               Total_raw_score     11    43.545455    5.298370    36.00    53.00
+               Percent_score       11    73.806364    8.979966    61.02    89.83
+9.0            Scale_score         14  4046.857143  388.310315  3358.00  4689.00
+               R_c_1               14     4.857143    1.791310     1.00     7.00
+               R_c_2               14     7.714286    2.757607     4.00    11.00
+               R_c_3               14     8.714286    3.220811     3.00    14.00
+               R_c_4               14     5.928571    2.525692     1.00    10.00
+               R_c_5               14     4.785714    1.805060     2.00     7.00
+               Total_raw_score     14    32.000000   10.347798    14.00    48.00
+               Percent_score       14    54.238571   17.539146    23.73    81.36
+10.0           Scale_score          4  3599.000000  167.437551  3358.00  3729.00
+               R_c_1                4     4.250000    0.500000     4.00     5.00
+               R_c_2                4     5.000000    2.160247     2.00     7.00
+               R_c_3                4     4.750000    2.362908     3.00     8.00
+               R_c_4                4     3.750000    2.629956     0.00     6.00
+               R_c_5                4     2.000000    2.160247     0.00     5.00
+               Total_raw_score      4    19.750000    4.031129    14.00    23.00
+               Percent_score        4    33.475000    6.831420    23.73    38.98
+11.0           Scale_score          1  3489.000000         NaN  3489.00  3489.00
+               R_c_1                1     1.000000         NaN     1.00     1.00
+               R_c_2                1     6.000000         NaN     6.00     6.00
+               R_c_3                1     6.000000         NaN     6.00     6.00
+               R_c_4                1     4.000000         NaN     4.00     4.00
+               R_c_5                1     0.000000         NaN     0.00     0.00
+               Total_raw_score      1    17.000000         NaN    17.00    17.00
+               Percent_score        1    28.810000         NaN    28.81    28.81
+2026-06-19 17:28:15 | DEBUG | P06 |
+                                   count         mean         std      min      max
+Special_education  
+0.0               Scale_score         23  4168.434783  475.897413  3358.00  5030.00
+                  R_c_1               23     5.565217    2.149547     1.00     9.00
+                  R_c_2               23     8.695652    2.991424     2.00    13.00
+                  R_c_3               23     9.173913    3.688461     3.00    15.00
+                  R_c_4               23     6.695652    2.930014     0.00    11.00
+                  R_c_5               23     4.739130    2.320215     0.00     7.00
+                  Total_raw_score     23    34.869565   12.226292    14.00    53.00
+                  Percent_score       23    59.101739   20.722760    23.73    89.83
+1.0               Scale_score          7  4023.142857  349.163490  3358.00  4331.00
+                  R_c_1                7     4.857143    1.951800     1.00     7.00
+                  R_c_2                7     7.142857    2.794553     4.00    11.00
+                  R_c_3                7     9.142857    2.968084     3.00    12.00
+                  R_c_4                7     6.000000    2.081666     3.00     9.00
+                  R_c_5                7     4.428571    1.718249     2.00     6.00
+                  Total_raw_score      7    31.571429    9.431457    14.00    40.00
+                  Percent_score        7    53.511429   15.985941    23.73    67.80
+2026-06-19 17:28:15 | DEBUG | P06 |
+                                    count         mean         std      min      max
+Emergent_bilingual  
+0                  Scale_score         19  4188.947368  389.803009  3358.00  4745.00
+                   R_c_1               19     5.894737    1.791794     3.00     9.00
+                   R_c_2               19     8.421053    3.024268     2.00    13.00
+                   R_c_3               19     9.736842    3.106304     3.00    15.00
+                   R_c_4               19     6.736842    2.765705     0.00    10.00
+                   R_c_5               19     5.000000    1.914854     0.00     7.00
+                   Total_raw_score     19    35.789474   10.293358    14.00    49.00
+                   Percent_score       19    60.661053   17.446387    23.73    83.05
+C                  Scale_score          8  3808.875000  389.786915  3358.00  4540.00
+                   R_c_1                8     3.625000    1.922610     1.00     6.00
+                   R_c_2                8     7.000000    2.672612     4.00    12.00
+                   R_c_3                8     6.375000    2.924649     3.00    11.00
+                   R_c_4                8     5.250000    2.121320     3.00    10.00
+                   R_c_5                8     3.250000    2.434866     0.00     6.00
+                   Total_raw_score      8    25.500000   10.433463    14.00    45.00
+                   Percent_score        8    43.220000   17.683487    23.73    76.27
+F                  Scale_score          1  4689.000000         NaN  4689.00  4689.00
+                   R_c_1                1     6.000000         NaN     6.00     6.00
+                   R_c_2                1    11.000000         NaN    11.00    11.00
+                   R_c_3                1    14.000000         NaN    14.00    14.00
+                   R_c_4                1    10.000000         NaN    10.00    10.00
+                   R_c_5                1     7.000000         NaN     7.00     7.00
+                   Total_raw_score      1    48.000000         NaN    48.00    48.00
+                   Percent_score        1    81.360000         NaN    81.36    81.36
+S                  Scale_score          2  4643.000000  547.300649  4256.00  5030.00
+                   R_c_1                2     7.500000    2.121320     6.00     9.00
+                   R_c_2                2    11.500000    0.707107    11.00    12.00
+                   R_c_3                2    12.500000    2.121320    11.00    14.00
+                   R_c_4                2     8.000000    4.242641     5.00    11.00
+                   R_c_5                2     6.000000    1.414214     5.00     7.00
+                   Total_raw_score      2    45.500000   10.606602    38.00    53.00
+                   Percent_score        2    77.120000   17.974654    64.41    89.83
+2026-06-19 17:28:15 | INFO | P06 | --- Section 7: Correlation matrix for numeric columns ---
+2026-06-19 17:28:15 | INFO | P06 | Computing correlation matrix for numeric columns
+2026-06-19 17:28:15 | INFO | P06 |
+Correlation matrix:
+2026-06-19 17:28:15 | DEBUG | P06 |
+                 Scale_score     R_c_1     R_c_2     R_c_3     R_c_4     R_c_5  Total_raw_score  Percent_score
+Scale_score         1.000000  0.843456  0.846659  0.890451  0.852524  0.829869         0.996235       0.996234
+R_c_1               0.843456  1.000000  0.608786  0.741792  0.586827  0.743278         0.839472       0.839478
+R_c_2               0.846659  0.608786  1.000000  0.653033  0.718150  0.653174         0.856695       0.856692
+R_c_3               0.890451  0.741792  0.653033  1.000000  0.687772  0.686771         0.895179       0.895169
+R_c_4               0.852524  0.586827  0.718150  0.687772  1.000000  0.599395         0.847328       0.847329
+R_c_5               0.829869  0.743278  0.653174  0.686771  0.599395  1.000000         0.838986       0.838999
+Total_raw_score     0.996235  0.839472  0.856695  0.895179  0.847328  0.838986         1.000000       1.000000
+Percent_score       0.996234  0.839478  0.856692  0.895169  0.847329  0.838999         1.000000       1.000000
+2026-06-19 17:28:15 | INFO | P06 | ---------Visualize Correlation Matrix as a Heatmap---------------
+2026-06-19 17:28:15 | INFO | P06 |
+Interpretation:
+
+ - Values close to 1 (dark blue) = strong positive correlation (both increase together)
+ - Values close to -1 (dark burgundy) = strong negative correlation (one increases, other decreases)
+ - Values close to 0 (yellow) = little or no linear relationship
+ - The diagonal is always 1 (each variable correlates perfectly with itself)
+
+From this heatmap, we can see that R_c_3 and Raw Score/Percent Score show strong positive correlation (~0.9).
+This suggests that performance in Reporting Category 3 is closely related to overall test performance.
+R_c_2 also shows a strong positive correlation with Percent Score (~0.86), indicating that performance in Reporting Category 2 is also closely related to overall test performance.
+R_c_1 and R_c_4 show the weakest correlation with each other (~0.59), suggesting that performance in Reporting Category 1 is not strongly related to performance in Reporting Category 4.
+
+2026-06-19 17:28:15 | INFO | P06 | --- Section 8: Charts ---
+2026-06-19 17:28:15 | INFO | P06 | ---- Creating Scatter Plot to see Relationships ------
+2026-06-19 17:28:15 | INFO | P06 | ----   Reporting Category 2 vs Percent Score ---------
+2026-06-19 17:28:15 | INFO | P06 | ----   Use clean dataframe ---------------------------
+2026-06-19 17:28:15 | INFO | P06 | ----   Set x to Reporting Category 2 -----------------
+2026-06-19 17:28:15 | INFO | P06 | ----   Set y to Percent Score -------------------
+2026-06-19 17:28:15 | INFO | P06 | ---   Set the hue (color mapping) to Sex --
+2026-06-19 17:28:16 | INFO | P06 | ---- Creating Scatter Plot to see Relationships ------
+2026-06-19 17:28:16 | INFO | P06 | ----   Reporting Category 3 vs Percent Score ---------
+2026-06-19 17:28:16 | INFO | P06 | ----   Use clean dataframe ---------------------------
+2026-06-19 17:28:16 | INFO | P06 | ----   Set x to Reporting Category 3 -----------------
+2026-06-19 17:28:16 | INFO | P06 | ----   Set y to Percent Score -------------------
+2026-06-19 17:28:16 | INFO | P06 | ---   Set the hue (color mapping) to Sex --
+2026-06-19 17:28:16 | INFO | P06 | ------ Creating Box Plot Grid to see Distribution: ----
+2026-06-19 17:28:16 | INFO | P06 | ------   Using Selected Numerical Variables -----------
+2026-06-19 17:28:16 | INFO | P06 | ------   5 Different Category Groups ------------------
+2026-06-19 17:28:16 | INFO | P06 | ------   Set x to the group column --------------------
+2026-06-19 17:28:16 | INFO | P06 | ------   Set y to a numeric column --------------------
+2026-06-19 17:28:16 | INFO | P06 | --- Section 9: Summary and next steps ---
+2026-06-19 17:28:16 | INFO | P06 | ========================
+2026-06-19 17:28:16 | INFO | P06 | SUMMARY
+2026-06-19 17:28:16 | INFO | P06 | ========================
+2026-06-19 17:28:16 | INFO | P06 | Dataset: student_test_data
+2026-06-19 17:28:16 | INFO | P06 | Original rows: 30
+2026-06-19 17:28:16 | INFO | P06 | Clean rows:    30
+2026-06-19 17:28:16 | INFO | P06 | ======================
+2026-06-19 17:28:16 | INFO | P06 | Results, interpretation, and next step found in documentation.
+2026-06-19 17:28:16 | INFO | P06 | ======================
+2026-06-19 17:28:16 | INFO | P06 | ----- in a script, call plt.show() once at the end to display all charts -----
+2026-06-19 17:28:16 | INFO | P06 | ----- in a script, close the chart windows (with the close button) to continue  -----
+2026-06-19 17:29:26 | INFO | P06 | EDA workflow complete
+2026-06-19 17:29:26 | INFO | P06 | IMPORTANT: This script creates chart windows.
+2026-06-19 17:29:26 | INFO | P06 | Close any chart windows and terminate this process with CTRL+c as needed.
+2026-06-19 17:29:26 | INFO | P06 | ========================
+2026-06-19 17:29:26 | INFO | P06 | Executed successfully!
+2026-06-19 17:29:26 | INFO | P06 | ========================
 ```
 
 ## Findings and Visuals
 
-Take screenshots of your charts and provide them here with a discussion.
-In Markdown, display a figure by using:
-an exclamation mark immediately followed by square brackets containing a useful caption
-immediately followed by parentheses containing the relative path to your figure.
-Note: When you start typing the path with a dot (.) for "here, in this directory",
-the IDE may help complete the path.
+![Heatmap of test data](docs/images/Figure_1_test_data.png)
+This heatmap shows a strong positive correlation (~0.9) between Reporting Category 3 peformance and overall percent score.
+It also shows a strong positive correlation (~0.86) between Reporting Category 2 peformance and overall percent score.
+The weakest correlation (~0.59) is shown between Reporting Category 1 performance and Reporting Category 4 performance.
+This suggests performance on Reporting Category 3 could be considered most important for overall performance, and instructional time, if limited, should consider emphasis on topics in this category.
 
-In your custom project, follow this example, but
+![Scatterplot by Sex of Reporting Category 2 vs Percent Score](docs/images/Figure_2_test_data.png)
+This scatterplot shows that, in general, more questions correct in Reporting Category 2 is positively correlated to percent score.
+This seems slightly more true for females, as the males seem to have more outliers on this scatterplot.
 
-- your figures and narrative should reflect your work,
-- this `README.md` should include your commands, process, and visuals, and
-- `docs/index.md` should include your narrative.
+![Scatterplot by Sex of Reporting Category 3 vs Percent Score](docs/images/Figure_3_test_data.png)
+This scatterplot shows that, in general, more questions correct in Reporting Category 3 is positively correlated to percent score.
 
-Remove unnecessary instructional comments in your custom files.
+![Boxplot Grid of Various Category Groups vs Percent Score](docs/images/Figure_4_test_data.png)
+Score by Sex Boxplot:
+This boxplot appears to show that the males (M) had a larger range of scores than the females (F), and that the median score for males is higher than that of females.
+Score by Ethnicity Boxplot:
+This boxplot shows that scores for Hispanics (H) are significantly higher than scores for Whites (W). However, this is not reliable information as there was only 1 White student who was included in this data set.
+Score by Grade Level:
+This boxplot shows the following:
+  - 8th graders had the highest median score.
+  - 11th graders had the lowest median score. (There was only one 11th grade student included in this data set.)
+  - 9th graders had the largest range of scores. (They accounted for the largest portion of this data set.)
+Score by Special Education Status:
+This boxplot shows students not enrolled in Special Education (0.0) had a larger range of scores and a higher median score than those enrolled in Special Education (1.0).
+Score by Emergent Bilingual Status:
+This boxplot shows the following:
+  - Second year monitor students (S), or students who have exited the ESL program due to high performance 2 years prior to this test, have the highest median score, and the smallest range other than (F) (see below).
+  - First year monitor students (F), or students who have exited the ESL program due to high performance 1 year prior to this test, have a median score comparable to second year monitor students, and the smallest range due to only having one student in this category.
+  - Students currently in an ESL program (C) have the lowest median score.
+  - Students never identified as EB (0) have the largest range of scores.
 
-Update these figures to present interesting results from your custom project:
+## Insights and Findings
 
-![Correlation Heatmap](./docs/images/Figure_1.png)
+Some of the important findings in this data that should drive instructional decisions are:
+  - Reporting Categories 2 and 3 are most strongly positively correlated to overall percent score, indicating instructional time should be focused on topics in these categories (linear equations and inequalities).
+  - While not extremely significant, the median scores for males is greater than females. This may indicate that additional instructional focus or teaching use of strategies may be needed for females.
+  - 8th grade performance (advanced students) on the Algebra I exam was the highest, while the performance in 10th and 11th grades was lowest. This indicates that additional interventions and instructional time need to be provided to students who are repeating the class/test, as these students were. (Possibly in the form of double blocking classes or additional intervention periods).
+  - While not extremely significant, the median scores for non-special education students is greater than for special education students. This indicates that additional instructional focus or teaching use of strategies may be needed for special education students.
+  - A drastic deficit was seen in the median scores for students currently enrolled in ESL (English as a second language) classes. Additional instructional time and strategies must be applied to improve performance in this group of students.
+  - Students who have exited the ESL program and are in a "monitor language only" stage performed better than those students who have never been identified as ESL, indicating that there may be a connection between being bilingual and higher performance in math, or between being bilingual and higher academic performance in general.
 
-![Provide a Useful Caption](./docs/images/Figure_2.png)
+## Next Steps for Further Analysis
 
-![Provide a Useful Caption](./docs/images/Figure_3.png)
+Possible next steps for further analysis with this data project are:
+  - Identification of performance patterns within the female sex to narrow down methods and strategies for additional instruction
+  - Identification of performance patterns within students repeating the class/test to narrow down methods and strategies for additional instruction
+  - Identification of performance patterns within special education students to narrow down methods and strategies for additional instruction
+  - Attempts to identify co-factors that may be affecting performance of current ESL students to determine whether language is the sole contributor to decreased performance
+  - Expanded data analysis for students who exited the ESL program to determine if the connection between higher scores and being bilingual is only true for math or for all tests taken by these students
 
 ## Project Documentation
 
@@ -210,327 +526,3 @@ Additional instructions, terms, and project notes:
 ## License
 
 [MIT](./LICENSE)
-
-## Modification 6-18-26
-
-The data set was filtered further, removing World from the list of used countries. This was done to focus in more on country statistics and create a smaller range on the visuals. Then, a 2 X 2 grid of boxplots was created to show each selected numerical column by country on a separate boxplot. This allows comparison of patterns between variables and noting of trends between countries. For instance, countries that had larger ranges of CO2 emissions tended to have larger ranges in GDP as well. Removal of "World" from countries also had a significant effect on the heatmap, which now shows only a strong correlation between CO2 emissions and GDP.
-
-## Example Output 6-18-26
-
-```shell
-2026-06-18 16:11:21 | INFO | P06 | === RUN START ===
-2026-06-18 16:11:21 | INFO | P06 | project=P06
-2026-06-18 16:11:21 | INFO | P06 | repo_dir=datafun-06-applied
-2026-06-18 16:11:21 | INFO | P06 | python=3.14.5
-2026-06-18 16:11:21 | INFO | P06 | os=Windows 11
-2026-06-18 16:11:21 | INFO | P06 | shell=powershell
-2026-06-18 16:11:21 | INFO | P06 | cwd=.
-2026-06-18 16:11:21 | INFO | P06 | github_actions=False
-2026-06-18 16:11:21 | INFO | P06 | === RUN START ===
-2026-06-18 16:11:21 | INFO | P06 | project=EDA
-2026-06-18 16:11:21 | INFO | P06 | repo_dir=datafun-06-applied
-2026-06-18 16:11:21 | INFO | P06 | python=3.14.5
-2026-06-18 16:11:21 | INFO | P06 | os=Windows 11
-2026-06-18 16:11:21 | INFO | P06 | shell=powershell
-2026-06-18 16:11:21 | INFO | P06 | cwd=.
-2026-06-18 16:11:21 | INFO | P06 | github_actions=False
-2026-06-18 16:11:21 | INFO | P06 | ========================
-2026-06-18 16:11:21 | INFO | P06 | START main()
-2026-06-18 16:11:21 | INFO | P06 | ========================
-2026-06-18 16:11:21 | INFO | P06 | --- Section 2: Load dataset: owid-co2-data-subset ---
-2026-06-18 16:11:21 | INFO | P06 | Loading dataset: owid-co2-data-subset
-2026-06-18 16:11:21 | INFO | P06 | Loaded: 350 rows, 14 columns
-2026-06-18 16:11:21 | INFO | P06 | --- Section 3: Inspect shape and basic structure ---
-2026-06-18 16:11:21 | INFO | P06 | Previewing first few rows of the dataset
-2026-06-18 16:11:21 | DEBUG | P06 |
-  country  year   population           gdp      co2  co2_per_capita  coal_co2  oil_co2  gas_co2  cement_co2  methane  \
-0  Brazil  1990  149143223.0  1.185475e+12  218.658           1.466    37.095  151.775    7.484      11.062  365.410  
-1  Brazil  1991  151724253.0  1.213090e+12  229.394           1.512    42.466  156.700    7.336      11.776  373.664  
-2  Brazil  1992  154275077.0  1.221829e+12  233.601           1.514    41.203  163.252    7.983       9.770  379.587  
-3  Brazil  1993  156794574.0  1.298221e+12  244.306           1.558    42.343  171.252    8.730      10.164  382.577  
-4  Brazil  1994  159265011.0  1.391784e+12  254.002           1.595    43.664  179.165    8.985      10.086  391.601  
-
-   nitrous_oxide  total_ghg  temperature_change_from_co2  
-0        100.456   2105.299                        0.030  
-1        103.996   2189.194                        0.031  
-2        106.648   2267.928                        0.031  
-3        110.082   2282.487                        0.032  
-4        111.742   2672.895                        0.033  
-2026-06-18 16:11:21 | INFO | P06 | Column names
-2026-06-18 16:11:21 | DEBUG | P06 | ['country', 'year', 'population', 'gdp', 'co2', 'co2_per_capita', 'coal_co2', 'oil_co2', 'gas_co2', 'cement_co2', 'methane', 'nitrous_oxide', 'total_ghg', 'temperature_change_from_co2']
-2026-06-18 16:11:21 | INFO | P06 | DataFrame info (types and non-null counts)
-<class 'pandas.DataFrame'>
-RangeIndex: 315 entries, 0 to 314
-Data columns (total 14 columns):
- #   Column                       Non-Null Count  Dtype  
----  ------                       --------------  -----  
- 0   country                      315 non-null    str  
- 1   year                         315 non-null    int64  
- 2   population                   315 non-null    float64
- 3   gdp                          297 non-null    float64
- 4   co2                          315 non-null    float64
- 5   co2_per_capita               315 non-null    float64
- 6   coal_co2                     315 non-null    float64
- 7   oil_co2                      315 non-null    float64
- 8   gas_co2                      315 non-null    float64
- 9   cement_co2                   315 non-null    float64
- 10  methane                      315 non-null    float64
- 11  nitrous_oxide                315 non-null    float64
- 12  total_ghg                    315 non-null    float64
- 13  temperature_change_from_co2  315 non-null    float64
-dtypes: float64(12), int64(1), str(1)
-memory usage: 34.6 KB
-2026-06-18 16:11:21 | INFO | P06 | Dataset shape: 315 rows, 14 columns
-2026-06-18 16:11:21 | INFO | P06 | --- Section 4: Create Data Dictionary and Check Data Quality ---
-2026-06-18 16:11:21 | INFO | P06 | Building starter data dictionary
-2026-06-18 16:11:21 | DEBUG | P06 |
-                         column    dtype  missing_count  missing_pct
-0                       country      str              0         0.00
-1                          year    int64              0         0.00
-2                    population  float64              0         0.00
-3                           gdp  float64             18         5.71
-4                           co2  float64              0         0.00
-5                co2_per_capita  float64              0         0.00
-6                      coal_co2  float64              0         0.00
-7                       oil_co2  float64              0         0.00
-8                       gas_co2  float64              0         0.00
-9                    cement_co2  float64              0         0.00
-10                      methane  float64              0         0.00
-11                nitrous_oxide  float64              0         0.00
-12                    total_ghg  float64              0         0.00
-13  temperature_change_from_co2  float64              0         0.00
-2026-06-18 16:11:21 | INFO | P06 | Missing values per column:
-2026-06-18 16:11:21 | INFO | P06 |
-country                         0
-year                            0
-population                      0
-gdp                            18
-co2                             0
-co2_per_capita                  0
-coal_co2                        0
-oil_co2                         0
-gas_co2                         0
-cement_co2                      0
-methane                         0
-nitrous_oxide                   0
-total_ghg                       0
-temperature_change_from_co2     0
-dtype: int64
-2026-06-18 16:11:21 | INFO | P06 | Checking missing values per column
-2026-06-18 16:11:21 | DEBUG | P06 |
-gdp                            18
-country                         0
-year                            0
-population                      0
-co2                             0
-co2_per_capita                  0
-coal_co2                        0
-oil_co2                         0
-gas_co2                         0
-cement_co2                      0
-methane                         0
-nitrous_oxide                   0
-total_ghg                       0
-temperature_change_from_co2     0
-dtype: int64
-2026-06-18 16:11:21 | INFO | P06 | Duplicate rows detected: 0
-2026-06-18 16:11:21 | INFO | P06 | Call describe() for numeric columns
-2026-06-18 16:11:21 | DEBUG | P06 |
-              year           co2  co2_per_capita    population           gdp
-count   315.000000    315.000000      315.000000  3.150000e+02  2.970000e+02
-mean   2007.000000   1988.832073        8.554498  3.725625e+08  5.126925e+12
-std      10.115574   2601.191056        5.731717  4.816060e+08  5.219532e+12
-min    1990.000000    218.658000        0.668000  2.778944e+07  8.202743e+11
-25%    1998.000000    481.535000        2.836500  6.384713e+07  2.015547e+12
-50%    2007.000000    800.823000        7.942000  1.270278e+08  2.945461e+12
-75%    2016.000000   2292.178500       11.216000  3.276530e+08  4.852985e+12
-max    2024.000000  12289.037000       21.398000  1.450936e+09  2.696602e+13
-
-2026-06-18 16:11:21 | INFO | P06 | --- Section 5: Create a cleaned view for EDA ---
-2026-06-18 16:11:21 | INFO | P06 | Creating cleaned view for EDA (dropping rows with key missing values)
-2026-06-18 16:11:21 | DEBUG | P06 | Columns required to be non-missing: ['year', 'co2', 'co2_per_capita', 'population', 'gdp', 'country']
-2026-06-18 16:11:21 | INFO | P06 | Original rows: 315
-2026-06-18 16:11:21 | INFO | P06 | Clean rows:    297
-2026-06-18 16:11:21 | INFO | P06 | Rows dropped:  18
-2026-06-18 16:11:21 | INFO | P06 | --- Section 6: Descriptive statistics for numeric columns ---
-2026-06-18 16:11:21 | INFO | P06 | --------------- Manual statistics ---------------
-2026-06-18 16:11:21 | DEBUG | P06 | co2_per_capita Statistics (using numpy):
-2026-06-18 16:11:21 | DEBUG | P06 |   Mean: 8.64
-2026-06-18 16:11:21 | DEBUG | P06 |   Std Dev: 5.79
-2026-06-18 16:11:21 | DEBUG | P06 |   Min: 0.67
-2026-06-18 16:11:21 | DEBUG | P06 |   Max: 21.40
-2026-06-18 16:11:21 | DEBUG | P06 |   Range: 20.73
-2026-06-18 16:11:21 | INFO | P06 | --------------- Using pandas describe() method ---------------
-2026-06-18 16:11:21 | INFO | P06 | Computing overall descriptive statistics
-2026-06-18 16:11:21 | DEBUG | P06 |
-                count          mean           std           min           25%           50%           75%  \
-year            297.0  2.006000e+03  9.537975e+00  1.990000e+03  1.998000e+03  2.006000e+03  2.014000e+03  
-co2             297.0  1.951604e+03  2.512394e+03  2.186580e+02  4.800580e+02  8.045420e+02  2.148052e+03  
-co2_per_capita  297.0  8.640377e+00  5.799480e+00  6.680000e-01  2.830000e+00  8.213000e+00  1.126100e+01  
-population      297.0  3.695191e+08  4.771640e+08  2.778944e+07  6.341737e+07  1.270647e+08  3.231154e+08  
-gdp             297.0  5.126925e+12  5.219532e+12  8.202743e+11  2.015547e+12  2.945461e+12  4.852985e+12  
-
-                         max  
-year            2.022000e+03  
-co2             1.171181e+04  
-co2_per_capita  2.139800e+01  
-population      1.426437e+09  
-gdp             2.696602e+13  
-2026-06-18 16:11:21 | INFO | P06 | --------------- Using pandas groupby() and agg() ---------------
-2026-06-18 16:11:21 | INFO | P06 | Computing descriptive statistics by group
-2026-06-18 16:11:21 | DEBUG | P06 |
-                year                                co2                                                co2_per_capita  \
-               count    mean      std   min   max count         mean          std       min        max          count  
-country  
-Brazil            33  2006.0  9.66954  1990  2022    33   386.024121    99.416512   218.658    556.526             33  
-Canada            33  2006.0  9.66954  1990  2022    33   541.119818    39.995135   449.776    589.956             33  
-China             33  2006.0  9.66954  1990  2022    33  6658.015455  3207.545348  2483.534  11711.808             33  
-France            33  2006.0  9.66954  1990  2022    33   374.195273    40.136420   281.515    419.119             33  
-Germany           33  2006.0  9.66954  1990  2022    33   855.715788    97.477463   647.177   1054.796             33  
-India             33  2006.0  9.66954  1990  2022    33  1496.659909   717.113573   577.987   2831.132             33  
-Japan             33  2006.0  9.66954  1990  2022    33  1210.712667    74.291661  1029.645   1311.876             33  
-United Kingdom    33  2006.0  9.66954  1990  2022    33   506.447697    90.802625   311.118    609.413             33  
-United States     33  2006.0  9.66954  1990  2022    33  5535.547455   377.675710  4689.954   6126.903             33  
-
-                                                    population                                            \
-                     mean       std     min     max      count          mean           std           min  
-country  
-Brazil           2.065606  0.352282   1.466   2.781         33  1.840960e+08  1.883102e+07  1.491432e+08  
-Canada          16.459121  1.218597  13.733  18.344         33  3.303238e+07  3.291569e+06  2.778944e+07  
-China            4.940697  2.137014   2.153   8.218         33  1.313988e+09  8.344915e+07  1.153583e+09  
-France           6.095394  0.899886   4.272   7.318         33  6.179824e+07  3.078375e+06  5.699024e+07  
-Germany         10.458455  1.275180   7.739  13.233         33  8.190820e+07  1.020909e+06  7.970796e+07  
-India            1.227273  0.424370   0.668   1.986         33  1.162973e+09  1.736689e+08  8.649722e+08  
-Japan            9.551061  0.540427   8.213  10.271         33  1.267329e+08  1.324991e+06  1.233998e+08  
-United Kingdom   8.291152  1.868601   4.563  10.588         33  6.184516e+07  3.544911e+06  5.736787e+07  
-United States   18.674636  2.286546  13.817  21.398         33  2.992977e+08  2.770057e+07  2.533734e+08  
-
-                               gdp  
-                         max count          mean           std           min           max  
-country  
-Brazil          2.103064e+08    33  2.262925e+12  7.097089e+11  1.185475e+12  3.187413e+12  
-Canada          3.882126e+07    33  1.291902e+12  2.981411e+11  8.202743e+11  1.761296e+12  
-China           1.426437e+09    33  1.171751e+13  7.417495e+12  3.385122e+12  2.696602e+13  
-France          6.627741e+07    33  2.183964e+12  3.303561e+11  1.636208e+12  2.671569e+12  
-Germany         8.408623e+07    33  3.049515e+12  5.985213e+11  2.015547e+12  3.909613e+12  
-India           1.425423e+09    33  4.891528e+12  2.764509e+12  1.750993e+12  1.047625e+13  
-Japan           1.281925e+08    33  4.368696e+12  3.311838e+11  3.699822e+12  4.852985e+12  
-United Kingdom  6.817932e+07    33  2.080226e+12  3.617837e+11  1.488075e+12  2.624285e+12  
-United States   3.415340e+08    33  1.429605e+13  3.052282e+12  9.224688e+12  1.949317e+13  
-2026-06-18 16:11:21 | INFO | P06 |
-Stacked view - easier to read in logs:
-2026-06-18 16:11:22 | DEBUG | P06 |
-                               count          mean           std           min           max
-country  
-Brazil         year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  3.860241e+02  9.941651e+01  2.186580e+02  5.565260e+02
-               co2_per_capita     33  2.065606e+00  3.522824e-01  1.466000e+00  2.781000e+00
-               population         33  1.840960e+08  1.883102e+07  1.491432e+08  2.103064e+08
-               gdp                33  2.262925e+12  7.097089e+11  1.185475e+12  3.187413e+12
-Canada         year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  5.411198e+02  3.999514e+01  4.497760e+02  5.899560e+02
-               co2_per_capita     33  1.645912e+01  1.218597e+00  1.373300e+01  1.834400e+01
-               population         33  3.303238e+07  3.291569e+06  2.778944e+07  3.882126e+07
-               gdp                33  1.291902e+12  2.981411e+11  8.202743e+11  1.761296e+12
-China          year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  6.658015e+03  3.207545e+03  2.483534e+03  1.171181e+04
-               co2_per_capita     33  4.940697e+00  2.137014e+00  2.153000e+00  8.218000e+00
-               population         33  1.313988e+09  8.344915e+07  1.153583e+09  1.426437e+09
-               gdp                33  1.171751e+13  7.417495e+12  3.385122e+12  2.696602e+13
-France         year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  3.741953e+02  4.013642e+01  2.815150e+02  4.191190e+02
-               co2_per_capita     33  6.095394e+00  8.998860e-01  4.272000e+00  7.318000e+00
-               population         33  6.179824e+07  3.078375e+06  5.699024e+07  6.627741e+07
-               gdp                33  2.183964e+12  3.303561e+11  1.636208e+12  2.671569e+12
-Germany        year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  8.557158e+02  9.747746e+01  6.471770e+02  1.054796e+03
-               co2_per_capita     33  1.045845e+01  1.275180e+00  7.739000e+00  1.323300e+01
-               population         33  8.190820e+07  1.020909e+06  7.970796e+07  8.408623e+07
-               gdp                33  3.049515e+12  5.985213e+11  2.015547e+12  3.909613e+12
-India          year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  1.496660e+03  7.171136e+02  5.779870e+02  2.831132e+03
-               co2_per_capita     33  1.227273e+00  4.243703e-01  6.680000e-01  1.986000e+00
-               population         33  1.162973e+09  1.736689e+08  8.649722e+08  1.425423e+09
-               gdp                33  4.891528e+12  2.764509e+12  1.750993e+12  1.047625e+13
-Japan          year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  1.210713e+03  7.429166e+01  1.029645e+03  1.311876e+03
-               co2_per_capita     33  9.551061e+00  5.404270e-01  8.213000e+00  1.027100e+01
-               population         33  1.267329e+08  1.324991e+06  1.233998e+08  1.281925e+08
-               gdp                33  4.368696e+12  3.311838e+11  3.699822e+12  4.852985e+12
-United Kingdom year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  5.064477e+02  9.080263e+01  3.111180e+02  6.094130e+02
-               co2_per_capita     33  8.291152e+00  1.868601e+00  4.563000e+00  1.058800e+01
-               population         33  6.184516e+07  3.544911e+06  5.736787e+07  6.817932e+07
-               gdp                33  2.080226e+12  3.617837e+11  1.488075e+12  2.624285e+12
-United States  year               33  2.006000e+03  9.669540e+00  1.990000e+03  2.022000e+03
-               co2                33  5.535547e+03  3.776757e+02  4.689954e+03  6.126903e+03
-               co2_per_capita     33  1.867464e+01  2.286546e+00  1.381700e+01  2.139800e+01
-               population         33  2.992977e+08  2.770057e+07  2.533734e+08  3.415340e+08
-               gdp                33  1.429605e+13  3.052282e+12  9.224688e+12  1.949317e+13
-2026-06-18 16:11:22 | INFO | P06 | --- Section 7: Correlation matrix for numeric columns ---
-2026-06-18 16:11:22 | INFO | P06 | Computing correlation matrix for numeric columns
-2026-06-18 16:11:22 | INFO | P06 |
-Correlation matrix:
-2026-06-18 16:11:22 | DEBUG | P06 |
-                    year       co2  co2_per_capita  population       gdp
-year            1.000000  0.157804       -0.076181    0.072093  0.323736
-co2             0.157804  1.000000        0.236925    0.594111  0.931043
-co2_per_capita -0.076181  0.236925        1.000000   -0.450027  0.261192
-population      0.072093  0.594111       -0.450027    1.000000  0.489849
-gdp             0.323736  0.931043        0.261192    0.489849  1.000000
-2026-06-18 16:11:22 | INFO | P06 | ---------Visualize Correlation Matrix as a Heatmap---------------
-2026-06-18 16:11:22 | INFO | P06 |
-CUSTOM: Update these notes and use Markdown cells to narrate and tell the story as you explore. For example:
-
-Interpretation:
-
- - Values close to 1 (dark red) = strong positive correlation (both increase together)
- - Values close to -1 (dark blue) = strong negative correlation (one increases, other decreases)
- - Values close to 0 (white) = little or no linear relationship
- - The diagonal is always 1 (each variable correlates perfectly with itself)
-
-From this heatmap, we can see that flipper_length_mm and body_mass_g show strong positive correlation (~0.87).
-
-2026-06-18 16:11:22 | INFO | P06 | --- Section 8: Charts ---
-2026-06-18 16:11:22 | INFO | P06 | ---- Creating Scatter Plot to see Relationships ------
-2026-06-18 16:11:22 | INFO | P06 | ----   Use clean dataframe ---------------------------
-2026-06-18 16:11:22 | INFO | P06 | ----   Set x to GDP -----------------------
-2026-06-18 16:11:22 | INFO | P06 | ----   Set y to CO2 emissions --------------------------
-2026-06-18 16:11:22 | INFO | P06 | ----   Set the hue (color mapping) to the group column --
-2026-06-18 16:11:22 | INFO | P06 | ------ Creating Box Plot Grid to see Distribution: ----
-2026-06-18 16:11:22 | INFO | P06 | ------   Using Selected Numerical Variables -----------
-2026-06-18 16:11:22 | INFO | P06 | ------   Set x to the group column --------------------
-2026-06-18 16:11:22 | INFO | P06 | ------   Set y to a numeric column --------------------
-2026-06-18 16:11:22 | INFO | P06 | --- Section 9: Summary and next steps ---
-2026-06-18 16:11:22 | INFO | P06 | ========================
-2026-06-18 16:11:22 | INFO | P06 | SUMMARY
-2026-06-18 16:11:22 | INFO | P06 | ========================
-2026-06-18 16:11:22 | INFO | P06 | Dataset: owid-co2-data-subset
-2026-06-18 16:11:22 | INFO | P06 | Original rows: 315
-2026-06-18 16:11:22 | INFO | P06 | Clean rows:    297
-2026-06-18 16:11:22 | INFO | P06 | Groups found in country: ['Brazil', 'Canada', 'China', 'France', 'Germany', 'India', 'Japan', 'United Kingdom', 'United States']
-2026-06-18 16:11:22 | INFO | P06 | ======================
-2026-06-18 16:11:22 | INFO | P06 | Review the results.
-2026-06-18 16:11:22 | INFO | P06 | Determine the strongest correlations.
-2026-06-18 16:11:22 | INFO | P06 | ======================
-2026-06-18 16:11:22 | INFO | P06 | Look for interesting patterns in the charts.
-2026-06-18 16:11:22 | INFO | P06 | Repeat the process, exploring additional angles.
-2026-06-18 16:11:22 | INFO | P06 | After finding interesting insights, conclude your analysis.
-2026-06-18 16:11:22 | INFO | P06 | ======================
-2026-06-18 16:11:22 | INFO | P06 | Include instructions and specifics in your README.md file.
-2026-06-18 16:11:22 | INFO | P06 | Write up your narrative on your docs/index.md file.
-2026-06-18 16:11:22 | INFO | P06 | Include your next step suggestions for further analysis or modeling.
-2026-06-18 16:11:22 | INFO | P06 | ======================
-2026-06-18 16:11:22 | INFO | P06 | ----- in a script, call plt.show() once at the end to display all charts -----
-2026-06-18 16:11:22 | INFO | P06 | ----- in a script, close the chart windows (with the close button) to continue  -----
-2026-06-18 16:12:21 | INFO | P06 | EDA workflow complete
-2026-06-18 16:12:21 | INFO | P06 | IMPORTANT: This script creates chart windows.
-2026-06-18 16:12:21 | INFO | P06 | Close any chart windows and terminate this process with CTRL+c as needed.
-2026-06-18 16:12:21 | INFO | P06 | ========================
-2026-06-18 16:12:21 | INFO | P06 | Executed successfully!
-2026-06-18 16:12:21 | INFO | P06 | ========================
-```
-
-[Figure 1 - Heatmap](docs/images/Figure_1_hasacco.png)
-[Figure 2 - Scatterplot](docs/images/Figure_2_hasacco.png)
-[Figure 3 - Boxplot Grid](docs/images/Figure_3_hasacco.png)
