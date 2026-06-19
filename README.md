@@ -463,19 +463,23 @@ R_c_1 and R_c_4 show the weakest correlation with each other (~0.59), suggesting
 ## Findings and Visuals
 
 ![Heatmap of test data](docs/images/Figure_1_test_data.png)
+
 This heatmap shows a strong positive correlation (~0.9) between Reporting Category 3 peformance and overall percent score.
 It also shows a strong positive correlation (~0.86) between Reporting Category 2 peformance and overall percent score.
 The weakest correlation (~0.59) is shown between Reporting Category 1 performance and Reporting Category 4 performance.
 This suggests performance on Reporting Category 3 could be considered most important for overall performance, and instructional time, if limited, should consider emphasis on topics in this category.
 
 ![Scatterplot by Sex of Reporting Category 2 vs Percent Score](docs/images/Figure_2_test_data.png)
+
 This scatterplot shows that, in general, more questions correct in Reporting Category 2 is positively correlated to percent score.
 This seems slightly more true for females, as the males seem to have more outliers on this scatterplot.
 
 ![Scatterplot by Sex of Reporting Category 3 vs Percent Score](docs/images/Figure_3_test_data.png)
+
 This scatterplot shows that, in general, more questions correct in Reporting Category 3 is positively correlated to percent score.
 
 ![Boxplot Grid of Various Category Groups vs Percent Score](docs/images/Figure_4_test_data.png)
+
 Score by Sex Boxplot:
 This boxplot appears to show that the males (M) had a larger range of scores than the females (F), and that the median score for males is higher than that of females.
 Score by Ethnicity Boxplot:
